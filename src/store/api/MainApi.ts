@@ -74,7 +74,23 @@ export const MainApi = createApi({
           },
         };
       },
+
+	  
     }),
+	notify: builder.mutation<any, any>({
+		query: (data) => {
+		  return {
+			url: "Notificaton/",
+			method: "POST",
+			body: data,
+			headers: {
+			  // 'Content-type':"multipart/form-data"
+			},
+		  };
+		},
+  
+		
+	  }),
     UpdateClient: builder.mutation({
       query: () => ({
         url: `client/`,
@@ -109,5 +125,6 @@ export const {
   useGetJustifsQuery,
   useLazyGetJustifsQuery,
   useGetAttendanceQuery,
-  useGetAllStudentMutation
+  useGetAllStudentMutation,
+  useNotifyMutation
 } = MainApi;
