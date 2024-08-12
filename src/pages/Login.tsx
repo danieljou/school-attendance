@@ -20,6 +20,7 @@ const Login = () => {
     const handleSubmit = async()  => {
         const res  = await login(data)
         if(res.data){
+
             if('err' in res.data){
                 toast.error('Login failded')
                 return
@@ -27,7 +28,13 @@ const Login = () => {
             toast.success('Login successfully')
             const payloads = res.data as AuthResponse
             dispatch(loginSuccess(payloads))
-            navigate('student')
+            if(payloads.good.RoleId == "66acfa09948eae2459802065"){
+
+                navigate('student')
+            } else{
+                navigate('scholarship')
+
+            }
             localStorage.setItem('token',JSON.stringify(payloads.accesstoken))
         }
         if(res.error){
