@@ -319,3 +319,15 @@ export interface StudID {
     descriptor: number[];
     __v:        number;
 }
+
+
+
+interface StudentData {
+    First_name: string;
+    Last_name: string;
+    Email: string;
+    Telephone: string;
+    password: string;
+    Class_name: string;
+    image: File; // Assuming you're using multer for file uploads
+  }

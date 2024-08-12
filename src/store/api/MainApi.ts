@@ -14,6 +14,7 @@ import {
   ClassStudents,
   RequestData,
   Stats,
+  Student,
 } from "../../types/types";
 // import { Client, Dash, Succursale } from "../../interfaces/mainInterfaces";
 
@@ -107,6 +108,15 @@ export const MainApi = createApi({
         };
       },
     }),
+
+	createStudent: builder.mutation<Student, FormData>({
+		query: (data) => ({
+		  url: '/create_student',
+		  method: 'POST',
+		  body: data,
+		}),
+		// invalidatesTags: ['Students'],
+	  }),
     DeleteSurcusalle: builder.mutation({
       query: (id: number) => {
         return {
@@ -126,5 +136,6 @@ export const {
   useLazyGetJustifsQuery,
   useGetAttendanceQuery,
   useGetAllStudentMutation,
-  useNotifyMutation
+  useNotifyMutation,
+  useCreateStudentMutation
 } = MainApi;

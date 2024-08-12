@@ -48,6 +48,10 @@ export const routes = createBrowserRouter([
                 Component:Dashboard
             },
             {
+                path:"students",
+                Component:Register
+            },
+            {
                 path: 'class',
                 
                 children: [
