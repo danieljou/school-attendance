@@ -6,6 +6,7 @@ import { BsEye } from 'react-icons/bs';
 import Card from '../../components/Card';
 import { useGetAttendanceQuery, useGetJustifsQuery } from '../../store/api/MainApi';
 import { useEffect, useState } from 'react';
+import { TbSettingsCode } from 'react-icons/tb';
 const columns: GridColDef<Omit<Attend,'_id'>>[] = [
     {
         field: 'date',
@@ -47,9 +48,13 @@ const columns: GridColDef<Omit<Attend,'_id'>>[] = [
         headerClassName: 'bg-gray-200 text-gray-700 font-semibold',
         cellClassName: 'p-2 text-gray-800',
         renderCell: (params) => (
-            <span className={`font-bold ${params.value ? 'text-green-600' : 'text-red-600'}`}>
+           <div className="">
+             <span className={`font-bold ${params.value ? 'text-green-600' : 'text-red-600'}`}>
                 {params.value ? 'Present' : 'Absent'}
             </span>
+
+           
+           </div>
         ),
     },
     {

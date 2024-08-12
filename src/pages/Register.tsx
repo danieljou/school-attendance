@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { Images } from "../constants/images";
-import { useLoginUserMutation } from "../store/api/AuthenticationApi"; // Assuming you have a mutation for registration
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useCreateStudentMutation } from "../store/api/MainApi";
 import toast from "react-hot-toast";
 
@@ -48,7 +45,8 @@ const Register = () => {
     formData.append("Last_name", data.Last_name);
     formData.append("Email", data.Email);
     formData.append("Telephone", data.Telephone);
-    formData.append("Password", data.Password);
+    formData.append("pass", data.Password);
+    formData.append("password", data.Password);
     formData.append("Class_name", data.Class_name);
 
     if (data.image) {

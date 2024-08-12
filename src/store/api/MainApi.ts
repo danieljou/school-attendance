@@ -114,6 +114,22 @@ export const MainApi = createApi({
 		  url: '/create_student',
 		  method: 'POST',
 		  body: data,
+		}),	
+		// invalidatesTags: ['Students'],
+	  }),
+	rollCall: builder.mutation<Student, FormData>({
+		query: (data) => ({
+		  url: '/Rollcall',
+		  method: 'POST',
+		  body: data,
+		}),
+		// invalidatesTags: ['Students'],
+	  }),
+	identify: builder.mutation<Student, FormData>({
+		query: (data) => ({
+		  url: '/Rollcall',
+		  method: 'POST',
+		  body: data,
 		}),
 		// invalidatesTags: ['Students'],
 	  }),
@@ -137,5 +153,6 @@ export const {
   useGetAttendanceQuery,
   useGetAllStudentMutation,
   useNotifyMutation,
-  useCreateStudentMutation
+  useCreateStudentMutation,
+  useRollCallMutation,useIdentifyMutation
 } = MainApi;
